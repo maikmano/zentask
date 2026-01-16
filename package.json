@@ -1,0 +1,83 @@
+{
+  "name": "zentask",
+  "private": true,
+  "version": "0.2.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maikmano/zentask.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "@google/genai": "^1.37.0",
+    "@google/generative-ai": "^0.24.1",
+    "@tiptap/extension-blockquote": "^3.15.3",
+    "@tiptap/extension-bold": "^3.15.3",
+    "@tiptap/extension-bullet-list": "^3.15.3",
+    "@tiptap/extension-character-count": "^3.15.3",
+    "@tiptap/extension-code": "^3.15.3",
+    "@tiptap/extension-code-block-lowlight": "^3.15.3",
+    "@tiptap/extension-heading": "^3.15.3",
+    "@tiptap/extension-horizontal-rule": "^3.15.3",
+    "@tiptap/extension-image": "^3.15.3",
+    "@tiptap/extension-italic": "^3.15.3",
+    "@tiptap/extension-link": "^3.15.3",
+    "@tiptap/extension-ordered-list": "^3.15.3",
+    "@tiptap/extension-placeholder": "^3.15.3",
+    "@tiptap/extension-strike": "^3.15.3",
+    "@tiptap/extension-task-item": "^3.15.3",
+    "@tiptap/extension-task-list": "^3.15.3",
+    "@tiptap/extension-typography": "^3.15.3",
+    "@tiptap/pm": "^3.15.3",
+    "@tiptap/react": "^3.15.3",
+    "@tiptap/starter-kit": "^3.15.3",
+    "@tiptap/suggestion": "^3.15.3",
+    "electron-updater": "^6.7.3",
+    "firebase": "^12.8.0",
+    "framer-motion": "^11.11.11",
+    "highlight.js": "^11.11.1",
+    "lowlight": "^3.3.0",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "tippy.js": "^6.3.7",
+    "tiptap-markdown": "^0.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "wait-on": "^9.0.3"
+  },
+  "build": {
+    "appId": "com.zentask.app",
+    "productName": "ZenTask",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

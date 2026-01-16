@@ -1,0 +1,7 @@
+{
+  "name": "ZenFlow Productivity",
+  "description": "A high-performance Kanban board and daily journal system integrated with Gemini AI for smart task summarization and productivity insights.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
